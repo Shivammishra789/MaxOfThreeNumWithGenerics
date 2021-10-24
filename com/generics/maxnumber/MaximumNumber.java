@@ -3,8 +3,9 @@ package com.generics.maxnumber;
 public class MaximumNumber {
 
 	public static void main(String[] args) {
-		findMax(78, 42, 96);				//passing three Integer value in method
-		findMax(7.2f, 4.2f, 9.6f);			//passing three Floating value in method
+		findMax(78, 42, 96);					//passing three Integer value in method
+		findMax(7.2f, 4.2f, 9.6f);				//passing three Floating value in method
+		findMax( "Apple", "Pear", "Banana");	//passing three String value in method
 	}
 	public static void findMax( Integer num1, Integer num2, Integer num3) {			//parameterized method to find maximum of three Integer number
 		Integer max = num1;														    //assigning first number to max
@@ -25,5 +26,15 @@ public class MaximumNumber {
 			max = num3;
 		}
 		System.out.println("Maximum Floating number is " + max);		
+	}
+	public static void findMax( String string1, String string2, String string3) {				//parameterized method to find maximum of three Strings
+		String max = string1;								 
+		if(string2.compareTo(max) > 0) {			         
+			max = string2;
+		}
+		else if(string3.compareTo(max) > 0){
+			max = string3;
+		}
+		System.out.println("Maximum String value is " + max);		
 	}
 }
