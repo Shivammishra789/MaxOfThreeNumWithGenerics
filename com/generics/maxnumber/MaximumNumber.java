@@ -10,7 +10,6 @@ public class MaximumNumber<E extends Comparable<E>> {
 		this.firstValue = firstValue;
 		this.secondValue = secondValue;
 		this.thirdValue = thirdValue;
-
 	}
 
 	public static void main(String[] args) {
