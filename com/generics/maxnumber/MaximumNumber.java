@@ -1,35 +1,24 @@
 package com.generics.maxnumber;
 
-public class MaximumNumber<E extends Comparable<E>> {
-
-	// global variables
-	private E firstValue, secondValue, thirdValue;
-
-	public MaximumNumber(E firstValue, E secondValue, E thirdValue) {
-		super();
-		this.firstValue = firstValue;
-		this.secondValue = secondValue;
-		this.thirdValue = thirdValue;
-	}
+public class MaximumNumber{
 
 	public static void main(String[] args) {
 
-		MaximumNumber<Integer> maxInt = new MaximumNumber<Integer>(45,78,89);  
-		maxInt.findMaximum();
-		MaximumNumber<Float> maxFloat = new MaximumNumber<Float>(4.45f,7.98f,7.9f);
-		maxFloat.findMaximum();
-		MaximumNumber<String> maxString = new MaximumNumber<String>("apple","peach","mango");
-		maxString.findMaximum();
+		Integer[] intArray = {5,7,8,12,89};
+		findMaximum(intArray); // passing integer array to method
+		Float[] floatArray = {5.7f,7.4f,8.9f,12.7f,8.9f};
+		findMaximum(floatArray);
+		String[] stringArray = {"Shivam","orange","Goa","carrot","apple"};
+		findMaximum(stringArray);
 	}
 
-	public void findMaximum() { // method to find maximum 
+	public static <E extends Comparable<E>> void findMaximum(E[] array) { // passing generic array to method
 
-		E max = firstValue; // assigning first number to max
-		if (secondValue.compareTo(max) > 0) { // comparing second number with max and if greater assigning it to max
-			max = secondValue;
-		}
-		if (thirdValue.compareTo(max) > 0) {
-			max = thirdValue;
+		E max = array[0]; // assigning first array value to max
+		for(int i = 1; i < array.length; i++) {
+			if (max.compareTo(array[i]) < 0) { // comparing second number with max and if greater assigning it to max
+				max = array[i];
+			}
 		}
 		System.out.println("Maximum is " + max); // printing max of all three
 	}
